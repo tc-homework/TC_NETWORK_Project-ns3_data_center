@@ -1,19 +1,19 @@
 <anim ver="netanim-3.108" filetype="animation" >
-<node id="0" sysId="0" locX="0" locY="1" />
-<node id="1" sysId="0" locX="27" locY="75" />
-<node id="2" sysId="0" locX="8" locY="58" />
-<node id="3" sysId="0" locX="69" locY="20" />
-<node id="4" sysId="0" locX="71" locY="43" />
-<node id="5" sysId="0" locX="41" locY="39" />
-<node id="6" sysId="0" locX="9" locY="93" />
-<node id="7" sysId="0" locX="22" locY="91" />
-<node id="8" sysId="0" locX="22" locY="96" />
-<node id="9" sysId="0" locX="18" locY="75" />
-<node id="10" sysId="0" locX="81" locY="59" />
-<node id="11" sysId="0" locX="46" locY="91" />
-<node id="12" sysId="0" locX="6" locY="44" />
-<node id="13" sysId="0" locX="87" locY="77" />
-<node id="14" sysId="0" locX="46" locY="97" />
+<node id="0" sysId="0" locX="13" locY="50" />
+<node id="1" sysId="0" locX="3" locY="79" />
+<node id="2" sysId="0" locX="15" locY="79" />
+<node id="3" sysId="0" locX="37" locY="50" />
+<node id="4" sysId="0" locX="29" locY="79" />
+<node id="5" sysId="0" locX="39" locY="79" />
+<node id="6" sysId="0" locX="61" locY="50" />
+<node id="7" sysId="0" locX="53" locY="79" />
+<node id="8" sysId="0" locX="67" locY="79" />
+<node id="9" sysId="0" locX="84" locY="50" />
+<node id="10" sysId="0" locX="77" locY="79" />
+<node id="11" sysId="0" locX="90" locY="79" />
+<node id="12" sysId="0" locX="25" locY="23" />
+<node id="13" sysId="0" locX="73" locY="23" />
+<node id="14" sysId="0" locX="48" locY="6" />
 <nu p="c" t="0" id="0" r="255" g="0" b="0" />
 <nu p="c" t="0" id="1" r="255" g="0" b="0" />
 <nu p="c" t="0" id="2" r="255" g="0" b="0" />
