@@ -30,10 +30,14 @@ Wireshark
 
 ## 项目简介
 	在传统的大型数据中心，网络通常是三层结构。
-	Cisco称之为：分级的互连网络模型（hierarchical inter-networking model）。这个模型包含了以下三层：
-	Access Layer（接入层）：有时也称为Edge Layer。接入交换机通常位于机架顶部，所以它们也被称为ToR（Top of Rack）交换机，它们物理连接服务器。
-	Aggregation Layer（汇聚层）：有时候也称为Distribution Layer。汇聚交换机连接Access交换机，同时提供其他的服务，例如防火墙，SSL offload，入侵检测，网络分析等。
-	Core Layer（核心层）：核心交换机为进出数据中心的包提供高速的转发，为多个汇聚层提供连接性，核心交换机为通常为整个网络提供一个弹性的L3路由网络。
+	Cisco称之为：分级的互连网络模型（hierarchical inter-networking model）。
+	这个模型包含了以下三层：
+	Access Layer（接入层）：有时也称为Edge Layer。
+	接入交换机通常位于机架顶部，所以它们也被称为ToR（Top of Rack）交换机，它们物理连接服务器。
+	Aggregation Layer（汇聚层）：有时候也称为Distribution Layer。
+	汇聚交换机连接Access交换机，同时提供其他的服务，例如防火墙，SSL offload，入侵检测，网络分析等。
+	Core Layer（核心层）：核心交换机为进出数据中心的包提供高速的转发。
+	为多个汇聚层提供连接性，核心交换机为通常为整个网络提供一个弹性的L3路由网络。
 	我们所做的，便是模拟一个数据中心的网络结构.
 
 ---
