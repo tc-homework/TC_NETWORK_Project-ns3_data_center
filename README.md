@@ -28,7 +28,7 @@ Wireshark
 
 ## 网络拓扑结构图
 
-![屏幕快照 2018-12-07 下午3.25.06](/Users/zzy/Desktop/屏幕快照 2018-12-07 下午3.25.06.png)
+![pic](https://github.com/acdzh/ns3-project/blob/master/img/dc.png)
 
 ## 实验步骤
 
@@ -36,5 +36,7 @@ Wireshark
 	2.利用Wireshark和ns3附带工具对输出的文件进行分析
 	3.实验总结
 =======
-![pic](https://github.com/acdzh/ns3-project/blob/master/dc.png)
+
+
 >>>>>>> 2dd953cb8d8f83451aa2bdd455a55f0f3b244cac
+
