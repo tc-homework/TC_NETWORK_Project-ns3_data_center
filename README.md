@@ -44,7 +44,7 @@ Wireshark
 
 ## 网络拓扑结构图
 
-![pic](https://github.com/acdzh/ns3-project/blob/master/img/dc.jpg)
+![pic](https://github.com/acdzh/ns3-project/blob/master/img/dc_pic.jpg)
 
 ---
 
