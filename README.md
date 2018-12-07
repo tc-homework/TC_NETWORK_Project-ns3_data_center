@@ -52,11 +52,11 @@ Wireshark
 
 dc.cc 是 ns3 源码文件
 
-dc.pcap 是 dc.cc 生成的抓包文件，使用 Wireshark 查看
+dc.pcap 是 dc.cc 生成的抓包文件，使用 Wireshark 分析
 
 ![pic](https://github.com/acdzh/ns3-project/blob/master/img/pcaq.jpg)
 
-dc.xml 是 dc.cc 生成的可视化文件，使用 NetAnim 查看
+dc.xml 是 dc.cc 生成的可视化文件，使用 NetAnim 分析
 
 ![pic](https://github.com/acdzh/ns3-project/blob/master/img/xml.png)
 
