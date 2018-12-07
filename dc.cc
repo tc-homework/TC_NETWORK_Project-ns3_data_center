@@ -6,16 +6,17 @@
 #include "ns3/applications-module.h"
 #include "ns3/ipv4-global-routing-helper.h"
 
-#include "ns3/netanim-module.h"//////////////////
+//#include "ns3/netanim-module.h"//////////////////
 
 
 using namespace ns3;
 
-NS_LOG_COMPONENT_DEFINE("SecondScriptExample");
+NS_LOG_COMPONENT_DEFINE ("SecondScriptExample");
 
-int main(int argc, char *argv[])
+int 
+main (int argc, char *argv[])
 {
-	bool verbose = true;
+  bool verbose = true;
   uint32_t nCsma = 3;
  // uint32_t nFlows = 2;
   //uint16_t port = 50000;
@@ -323,10 +324,13 @@ int main(int argc, char *argv[])
   csma4.EnablePcap ("dc2", csmaNodes4.Get(2)->GetId(), 0, false);// csmaDevices4.Get (2));
 
   
-	AnimationInterface anim("dc.xml"); 
-
-
-	Simulator::Run();
-	Simulator::Destroy();
-	return 0;
-}
+	//AnimationInterface anim("dc.xml"); 
+  
+  
+  
+  
+  
+  Simulator::Run ();
+  Simulator::Destroy ();
+  return 0;
+} 
