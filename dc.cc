@@ -2,11 +2,10 @@
 #include "ns3/network-module.h"
 #include "ns3/csma-module.h"
 #include "ns3/internet-module.h"
-//#include "ns3/point-to-point-module.h"
 #include "ns3/applications-module.h"
 #include "ns3/ipv4-global-routing-helper.h"
 
-//#include "ns3/netanim-module.h"//////////////////
+//#include "ns3/netanim-module.h"//默认不输出xml
 
 
 using namespace ns3;
@@ -16,21 +15,11 @@ NS_LOG_COMPONENT_DEFINE("SecondScriptExample");
 int
 main(int argc, char *argv[])
 {
-	bool verbose = true;
+
 	uint32_t nCsma = 3;
-	// uint32_t nFlows = 2;
-	 //uint16_t port = 50000;
-
-	CommandLine cmd;
-	//cmd.AddValue ("nCsma", "Number of \"extra\" CSMA nodes/devices", nCsma);
-	cmd.AddValue("verbose", "Tell echo applications to log if true", verbose);
-
-	cmd.Parse(argc, argv);
-
 
 	LogComponentEnable("PacketSink", LOG_LEVEL_INFO);
 	LogComponentEnable("OnOffApplication", LOG_LEVEL_INFO);
-
 
 	nCsma = nCsma == 0 ? 1 : nCsma;
 
@@ -159,49 +148,49 @@ main(int argc, char *argv[])
 	Ipv4InterfaceContainer csmaInterfaces7;
 	csmaInterfaces7 = address.Assign(csmaDevices7);
 
-	//zhuji h1 server
+	//host h1 server
 	ApplicationContainer sinkApp1;
 	PacketSinkHelper packetSinkHelper1("ns3::TcpSocketFactory", InetSocketAddress(csmaInterfaces1.GetAddress(1), 5000));
 	sinkApp1 = packetSinkHelper1.Install(csmaNodes1.Get(1));
 	sinkApp1.Start(Seconds(1.0));
 	sinkApp1.Stop(Seconds(60.0));
-	//zhuji h2 server 
+	//host h2 server 
 	ApplicationContainer sinkApp2;
 	PacketSinkHelper packetSinkHelper2("ns3::TcpSocketFactory", InetSocketAddress(csmaInterfaces1.GetAddress(2), 5000));
 	sinkApp2 = packetSinkHelper2.Install(csmaNodes1.Get(2));
 	sinkApp2.Start(Seconds(1.0));
 	sinkApp2.Stop(Seconds(60.0));
-	//zhuji h3 server
+	//host h3 server
 	ApplicationContainer sinkApp3;
 	PacketSinkHelper packetSinkHelper3("ns3::TcpSocketFactory", InetSocketAddress(csmaInterfaces2.GetAddress(1), 5000));
 	sinkApp3 = packetSinkHelper3.Install(csmaNodes2.Get(1));
 	sinkApp3.Start(Seconds(1.0));
 	sinkApp3.Stop(Seconds(60.0));
-	//zhuji h4 server
+	//host h4 server
 	ApplicationContainer sinkApp4;
 	PacketSinkHelper packetSinkHelper4("ns3::TcpSocketFactory", InetSocketAddress(csmaInterfaces2.GetAddress(2), 5000));
 	sinkApp4 = packetSinkHelper4.Install(csmaNodes2.Get(2));
 	sinkApp4.Start(Seconds(1.0));
 	sinkApp4.Stop(Seconds(60.0));
-	//zhuji h5 server
+	//host h5 server
 	ApplicationContainer sinkApp5;
 	PacketSinkHelper packetSinkHelper5("ns3::TcpSocketFactory", InetSocketAddress(csmaInterfaces3.GetAddress(1), 5000));
 	sinkApp5 = packetSinkHelper5.Install(csmaNodes3.Get(1));
 	sinkApp5.Start(Seconds(1.0));
 	sinkApp5.Stop(Seconds(60.0));
-	//zhuji h6 server
+	//host h6 server
 	ApplicationContainer sinkApp6;
 	PacketSinkHelper packetSinkHelper6("ns3::TcpSocketFactory", InetSocketAddress(csmaInterfaces3.GetAddress(2), 5000));
 	sinkApp6 = packetSinkHelper6.Install(csmaNodes3.Get(2));
 	sinkApp6.Start(Seconds(1.0));
 	sinkApp6.Stop(Seconds(60.0));
-	//zhuji h7 server
+	//host h7 server
 	ApplicationContainer sinkApp7;
 	PacketSinkHelper packetSinkHelper7("ns3::TcpSocketFactory", InetSocketAddress(csmaInterfaces4.GetAddress(1), 5000));
 	sinkApp7 = packetSinkHelper7.Install(csmaNodes4.Get(1));
 	sinkApp7.Start(Seconds(1.0));
 	sinkApp7.Stop(Seconds(60.0));
-	//zhuji h8 server
+	//host h8 server
 	ApplicationContainer sinkApp8;
 	PacketSinkHelper packetSinkHelper8("ns3::TcpSocketFactory", InetSocketAddress(csmaInterfaces4.GetAddress(2), 5000));
 	sinkApp8 = packetSinkHelper8.Install(csmaNodes4.Get(2));
@@ -211,7 +200,7 @@ main(int argc, char *argv[])
 
 	//在节点n1上建立多个OnOffApplication，产生多路流量,用于接收其他客户机发来的数据包
 	//On/Off周期性地产生流量，这里将On周期设置为50秒，Off周期设置为0
-	  //zhuji   h1--->h2
+	  //host   h1--->h2
 	ApplicationContainer clientApp1;
 	OnOffHelper client1("ns3::TcpSocketFactory", InetSocketAddress(csmaInterfaces1.GetAddress(2), 5000));
 	client1.SetAttribute("OnTime", StringValue("ns3::ConstantRandomVariable[Constant=50]"));
@@ -221,7 +210,7 @@ main(int argc, char *argv[])
 	clientApp1 = client1.Install(csmaNodes1.Get(1));
 	clientApp1.Start(Seconds(2));
 	clientApp1.Stop(Seconds(3));
-	//zhuji   h1--->h3
+	//host   h1--->h3
 	ApplicationContainer clientApp2;
 	OnOffHelper client2("ns3::TcpSocketFactory", InetSocketAddress(csmaInterfaces2.GetAddress(1), 5000));
 	client2.SetAttribute("OnTime", StringValue("ns3::ConstantRandomVariable[Constant=50]"));
@@ -231,7 +220,7 @@ main(int argc, char *argv[])
 	clientApp2 = client2.Install(csmaNodes1.Get(1));
 	clientApp2.Start(Seconds(2));
 	clientApp2.Stop(Seconds(3));
-	//zhuji  h5--->h6
+	//host  h5--->h6
 	ApplicationContainer clientApp3;
 	OnOffHelper client3("ns3::TcpSocketFactory", InetSocketAddress(csmaInterfaces3.GetAddress(2), 5000));
 	client3.SetAttribute("OnTime", StringValue("ns3::ConstantRandomVariable[Constant=50]"));
@@ -241,7 +230,7 @@ main(int argc, char *argv[])
 	clientApp3 = client3.Install(csmaNodes3.Get(1));
 	clientApp3.Start(Seconds(2));
 	clientApp3.Stop(Seconds(3));
-	//zhuji  h5--->h7
+	//host  h5--->h7
 	ApplicationContainer clientApp4;
 	OnOffHelper client4("ns3::TcpSocketFactory", InetSocketAddress(csmaInterfaces4.GetAddress(1), 5000));
 	client4.SetAttribute("OnTime", StringValue("ns3::ConstantRandomVariable[Constant=50]"));
@@ -251,7 +240,7 @@ main(int argc, char *argv[])
 	clientApp4 = client4.Install(csmaNodes3.Get(1));
 	clientApp4.Start(Seconds(2));
 	clientApp4.Stop(Seconds(3));
-	//zhuji  h1--->h5
+	//host  h1--->h5
 	ApplicationContainer clientApp5;
 	OnOffHelper client5("ns3::TcpSocketFactory", InetSocketAddress(csmaInterfaces3.GetAddress(1), 5000));
 	client5.SetAttribute("OnTime", StringValue("ns3::ConstantRandomVariable[Constant=50]"));
@@ -261,7 +250,7 @@ main(int argc, char *argv[])
 	clientApp5 = client5.Install(csmaNodes1.Get(1));
 	clientApp5.Start(Seconds(2));
 	clientApp5.Stop(Seconds(3));
-	//zhuji  h6--->h2
+	//host  h6--->h2
 	ApplicationContainer clientApp6;
 	OnOffHelper client6("ns3::TcpSocketFactory", InetSocketAddress(csmaInterfaces1.GetAddress(2), 5000));
 	client6.SetAttribute("OnTime", StringValue("ns3::ConstantRandomVariable[Constant=50]"));
@@ -271,7 +260,7 @@ main(int argc, char *argv[])
 	clientApp6 = client6.Install(csmaNodes3.Get(2));
 	clientApp6.Start(Seconds(2));
 	clientApp6.Stop(Seconds(3));
-	//zhuji  h3--->h7
+	//host  h3--->h7
 	ApplicationContainer clientApp7;
 	OnOffHelper client7("ns3::TcpSocketFactory", InetSocketAddress(csmaInterfaces4.GetAddress(1), 5000));
 	client7.SetAttribute("OnTime", StringValue("ns3::ConstantRandomVariable[Constant=50]"));
@@ -281,7 +270,7 @@ main(int argc, char *argv[])
 	clientApp7 = client7.Install(csmaNodes2.Get(1));
 	clientApp7.Start(Seconds(2));
 	clientApp7.Stop(Seconds(3));
-	//zhuji  h8--->h4
+	//host  h8--->h4
 	ApplicationContainer clientApp8;
 	OnOffHelper client8("ns3::TcpSocketFactory", InetSocketAddress(csmaInterfaces2.GetAddress(2), 5000));
 	client8.SetAttribute("OnTime", StringValue("ns3::ConstantRandomVariable[Constant=50]"));
@@ -291,7 +280,7 @@ main(int argc, char *argv[])
 	clientApp8 = client8.Install(csmaNodes4.Get(2));
 	clientApp8.Start(Seconds(2));
 	clientApp8.Stop(Seconds(3));
-	//zhuji  h2--->h8
+	//host  h2--->h8
 	ApplicationContainer clientApp9;
 	OnOffHelper client9("ns3::TcpSocketFactory", InetSocketAddress(csmaInterfaces4.GetAddress(2), 5000));
 	client9.SetAttribute("OnTime", StringValue("ns3::ConstantRandomVariable[Constant=50]"));
@@ -301,7 +290,7 @@ main(int argc, char *argv[])
 	clientApp9 = client9.Install(csmaNodes1.Get(2));
 	clientApp9.Start(Seconds(2));
 	clientApp9.Stop(Seconds(3));
-	//zhuji  h5--->h8
+	//host  h5--->h8
 	ApplicationContainer clientApp10;
 	OnOffHelper client10("ns3::TcpSocketFactory", InetSocketAddress(csmaInterfaces4.GetAddress(2), 5000));
 	client10.SetAttribute("OnTime", StringValue("ns3::ConstantRandomVariable[Constant=50]"));
