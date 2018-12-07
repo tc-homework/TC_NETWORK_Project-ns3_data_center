@@ -1,4 +1,5 @@
 # ns3-project
+<<<<<<< HEAD
 
 成员
 张智源	1652782	
@@ -34,3 +35,6 @@ Wireshark
 	1.编写程序模拟网络拓扑及网络消息传输状态（多对一和多对多）
 	2.利用Wireshark和ns3附带工具对输出的文件进行分析
 	3.实验总结
+=======
+![pic](https://github.com/acdzh/ns3-project/blob/master/dc.png)
+>>>>>>> 2dd953cb8d8f83451aa2bdd455a55f0f3b244cac
