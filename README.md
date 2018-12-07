@@ -7,7 +7,7 @@
 成员
 张智源	1652782	
 邱骏翔	1652707	
-朱    宽     1751130	
+朱宽     1751130
 周宇东	1751659
 
 ---
@@ -45,6 +45,20 @@ Wireshark
 ## 网络拓扑结构图
 
 ![pic](https://github.com/acdzh/ns3-project/blob/master/img/dc.jpg)
+
+---
+
+## 文件说明
+
+dc.cc 是 ns3 源码文件
+
+dc.pcap 是 dc.cc 生成的抓包文件，使用 Wireshark 查看
+
+![pic](https://github.com/acdzh/ns3-project/blob/master/img/dcaq.jpg)
+
+dc.xml 是 dc.cc 生成的可视化文件，使用 NetAnim 查看
+
+![pic](https://github.com/acdzh/ns3-project/blob/master/img/xml.jpg)
 
 ---
 
